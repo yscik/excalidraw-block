@@ -1,0 +1,65 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "excalidraw-blocks/excalidraw-blocks",
+	"version": "0.1.0",
+	"title": "Excalidraw Canvas",
+	"category": "widgets",
+	"description": "Example block scaffolded with Create Block tool.",
+	"supports": {
+		"__experimentalOnEnter": true,
+		"__experimentalSettings": true,
+		"align": [ "wide", "full" ],
+		"anchor": true,
+		"ariaLabel": true,
+		"html": false,
+		"spacing": {
+			"margin": [ "top", "bottom" ]
+		},
+		"dimensions": {
+			"minHeight": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		}
+	},
+	"attributes": {
+		"scene": {
+			"type": "object"
+		},
+		"svg": {
+			"type": "string"
+		},
+		"files": {
+			"type": "array",
+			"source": "query",
+			"selector": "svg symbol",
+			"query": {
+				"id": {
+					"type": "string",
+					"source": "attribute",
+					"attribute": "id"
+				},
+				"dataURL": {
+					"type": "string",
+					"source": "attribute",
+					"selector": "image",
+					"attribute": "href"
+				}
+			}
+		}
+	},
+	"textdomain": "excalidraw-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

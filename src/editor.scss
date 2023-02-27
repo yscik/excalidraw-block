@@ -1,0 +1,64 @@
+
+
+.wp-block-excalidraw-blocks-excalidraw-blocks {
+
+}
+
+.excalidraw-wrapper	.excalidraw, .excalidraw.excalidraw-modal-container {
+	--gray-900: #1e1e1e;
+	--gray-100: #f0f0f0;
+	--default-border-color: var(--gray-900);
+	--shadow-island: 0 0 0 1px var(--default-border-color);
+	--border-radius-md: 2px;
+	--border-radius-lg: 2px;
+	--color-primary: var(--wp-admin-theme-color);
+	--color-selection: var(--wp-admin-theme-color);
+	--link-color: var(--wp-admin-theme-color);
+	--select-highlight-color: var(--wp-admin-theme-color);
+	--color-primary-light: var(--gray-100);
+
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	font-size: 13px;
+	line-height: 1.4em;
+
+	.ToolIcon .ToolIcon_type_radio:checked + .ToolIcon__icon, .ToolIcon_type_checkbox:checked + .ToolIcon__icon {
+		background: var(--gray-900);
+		--keybinding-color: #fff;
+		* {
+			--color-primary-darker: #fff;
+			--icon-fill-color: var(--gray-900);
+		}
+	}
+
+}
+.excalidraw.excalidraw-modal-container {
+	position: fixed;
+	.Modal__background {
+		background: rgba(0, 0, 0, 0.35);
+	}
+
+	.Modal__content {
+		background: #fff;
+		box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+		border-radius: 2px;
+		border: none;
+	}
+	.HelpDialog__btn:hover {
+		background: var(--gray-100);
+	}
+}
+
+.excalidraw-wrapper {
+	height: 600px;
+	max-height: 80vh;
+
+	&:not(.is-selected) {
+		.excalidraw .layer-ui__wrapper {
+			display: none;
+		}
+	}
+
+	&.is-selected:not(.has-border-color) {
+		outline: 1px dashed #1e1e1e;
+	}
+}
