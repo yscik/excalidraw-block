@@ -9,20 +9,21 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import './style.scss';
 
-import Edit from './edit';
+import edit from './edit';
 import save from './save';
-import metadata from './block.json';
+import block from './block.json';
 import icon from './icon.js';
+import transforms from './transforms';
 
-
-registerBlockType( metadata.name, {
+registerBlockType( block.name, {
 	icon,
-	edit: Edit,
+	edit,
 	save,
+	transforms,
+	...block,
 } );
 
-
 // TODO DO NOT COMMIT
-window.addEventListener('beforeunload', function (event) {
+window.addEventListener( 'beforeunload', function ( event ) {
 	event.stopImmediatePropagation();
-});
+} );
